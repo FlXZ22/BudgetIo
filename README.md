@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# BudgetIO
 
-# Run and deploy your AI Studio app
+A personal budget tracker I built to stop losing track of where my money goes. No accounts, no subscriptions — just open it and start logging.
 
-This contains everything you need to run your app locally.
+## What it does
 
-View your app in AI Studio: https://ai.studio/apps/2a26b7a9-d74b-4c9d-a776-869ee354cdda
+You add income and expenses, pick a category, and the dashboard updates in real time. There's a monthly budget goal you can set yourself, a breakdown of spending by category, and a chart comparing income vs expenses over time. Everything saves automatically so your data is still there when you come back.
 
-## Run Locally
+The transaction list has filters for income/expense and by month, so finding a specific entry doesn't require scrolling through everything. Each transaction has a delete button. Adding one takes maybe five seconds with the quick-amount chips.
 
-**Prerequisites:**  Node.js
+## Stack
 
+- TypeScript + React
+- Vite
+- Recharts for the graphs
+- localStorage for persistence
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Run it locally
+```bash
+npm install
+npm run dev
+```
+
+No API keys needed. No backend. Works offline.
+
+## What's missing (for now)
+
+- Editing a transaction after saving it
+- Recurring transactions
+- Export to CSV
+- Multi-currency support
+
+These are on the list for v2.
+
+## Screenshots
+
+*Dashboard with spending breakdown and income vs expenses chart.*
+
+## Live demo
+
+[budget-io-three.vercel.app](https://budget-io-three.vercel.app)
