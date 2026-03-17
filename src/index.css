@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Albert+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-tropical: "Albert Sans", sans-serif;
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-accent-main: var(--accent-main);
+  --color-dark-card: #1C1C1E;
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-subtle: var(--border-subtle);
+}
+
+:root {
+  --bg-primary: #F5F0E8;
+  --bg-secondary: #FFFFFF;
+  --text-primary: #0D0D0D;
+  --text-secondary: rgba(13, 13, 13, 0.6);
+  --border-subtle: rgba(13, 13, 13, 0.08);
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --outer-bg: #E4E3E0;
+  --accent-main: #F5C518;
+}
+
+.dark {
+  --bg-primary: #121212;
+  --bg-secondary: #1E1E1E;
+  --text-primary: #F5F0E8;
+  --text-secondary: rgba(245, 240, 232, 0.6);
+  --border-subtle: rgba(245, 240, 232, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --outer-bg: #000000;
+  --accent-main: #F5C518;
+}
+
+.phoenix {
+  --bg-primary: #1a1d23;
+  --bg-secondary: #242830;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --outer-bg: #121418;
+  --accent-main: #f27d26;
+}
+
+.tropical {
+  --bg-primary: #f5f6f7;
+  --bg-secondary: #ffffff;
+  --text-primary: #211f1f;
+  --text-secondary: #3d4e59;
+  --border-subtle: rgba(61, 78, 89, 0.1);
+  --card-shadow: rgba(146, 200, 82, 0.1);
+  --outer-bg: #d1d8e0;
+  --accent-main: #92c852;
+  font-family: 'Albert Sans', sans-serif;
+}
+
+.flow {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6c757d;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --outer-bg: #f0f2f5;
+  --accent-main: #FF7036;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--outer-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .striped-bg {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.05) 10px,
+      rgba(0, 0, 0, 0.05) 20px
+    );
+  }
+
+  .flow-gradient {
+    background: linear-gradient(135deg, #FF7036 0%, #F09C6B 100%);
+  }
+
+  /* Custom Range Input Styling */
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--accent-main);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--accent-main);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+}
